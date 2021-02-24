@@ -1,10 +1,9 @@
 <?php
 $guid = input('guid');
-$types      = input('types');
 if($guid) {
-		$user = ossn_user_by_guid($guid);
+	$user = ossn_user_by_guid($guid);
 }
-if($user && com_is_active('OssnNotifications') && com_is_active('OssnMessages')) {
+if($user &&  com_is_active('OssnMessages')) {
 		$OssnMessages = new OssnMessages;
 		$args = array(
 			'from' => 'ossn_messages as m',
